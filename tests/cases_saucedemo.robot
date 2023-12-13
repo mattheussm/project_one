@@ -3,8 +3,7 @@ Library   SeleniumLibrary
 Resource    ../resources/base_saucedemo.robot
 
 *** Test Cases ***
-
-Login Standard User
+Shopping With Standard User   
 # robot -i standard_user -d ./logs/ tests/cases_saucedemo.robot
   [TAGS]    standard_user   regression   
   New Session
@@ -12,7 +11,23 @@ Login Standard User
   Login Container   standard_user
   Click on Login Button
   Home Page Succesful Login
+  
+  Choosing an Item
+  Add Item To Cart
 
+  Completing the Purchase
+  Fill Checkout Info Form
+  Button Continue
+
+  Checkout Overview Confirmation
+  Finish Purchase
+  
+  Back Home
+
+  Logout
+
+  Confirming Logout
+  
 Login Locked Out User
 # robot -i locked_out_user -d ./logs/ tests/cases_saucedemo.robot
   [TAGS]    locked_out_user   regression
@@ -20,6 +35,8 @@ Login Locked Out User
 
   Login Container   locked_out_user
   Click on Login Button
+
+  Error Locked Out User
 
 Login With Problem User
 # robot -i problem_user -d ./logs/ tests/cases_saucedemo.robot
@@ -29,13 +46,13 @@ Login With Problem User
   Login Container  problem_user
   Click on Login Button
 
-Login With Performance Glitch User
+#Login With Performance Glitch User
 # robot -i performance_glitch_user -d ./logs/ tests/cases_saucedemo.robot
-  [TAGS]    performance_glitch_user   regression
-  New Session
+#  [TAGS]    performance_glitch_user   regression
+#  New Session
 
-  Login Container   perfomance_glitch_user
-  Click on Login Button
+#  Login Container   perfomance_glitch_user
+#  Click on Login Button
 
 Login Error User
 # robot -i error_user -d ./logs/ tests/cases_saucedemo.robot
