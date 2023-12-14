@@ -15,7 +15,7 @@ Shopping With Standard User
   Choosing an Item
   Add Item To Cart
 
-  Completing the Purchase
+  Clicking on Shopping Cart
   Fill Checkout Info Form
   Button Continue
 
@@ -27,7 +27,30 @@ Shopping With Standard User
   Logout
 
   Confirming Logout
+
+Shopping With Less Steps
+# robot -i less_steps -d ./logs/ tests/cases_saucedemo.robot
+  [TAGS]    less_steps    regression
+  New Session
+
+  Login Container   standard_user
+  Click on Login Button
+  Home Page Succesful Login
+  Add to Cart from Home Page
+
+  Clicking on Shopping Cart
+  Fill Checkout Info Form
+  Button Continue
+
+  Checkout Overview Confirmation
+  Finish Purchase
   
+  Back Home
+
+  Logout
+
+  Confirming Logout
+
 Login Locked Out User
 # robot -i locked_out_user -d ./logs/ tests/cases_saucedemo.robot
   [TAGS]    locked_out_user   regression

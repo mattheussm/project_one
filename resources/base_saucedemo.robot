@@ -60,12 +60,11 @@ Choosing an Item
 Add Item To Cart
   Click Element   xpath=//button[@class="btn btn_primary btn_small btn_inventory"]
 
-Completing the Purchase
+Clicking on Shopping Cart
   Click Element   xpath=//a[@class="shopping_cart_link"]
   Click Element   xpath=//button[@id="checkout"]
 
-Fill Checkout Info Form
-  # [Arguments]   ${First_Name_dt}    ${Last_Name_dt}      
+Fill Checkout Info Form    
   Wait Until Element Is Visible   xpath=//div[@class="checkout_info"]   10
   
   ${FIRSTNAMEFAKE}     FakerLibrary.FirstName
@@ -75,8 +74,6 @@ Fill Checkout Info Form
   Input Text    ${Last_Name}    ${LASTNAMEFAKE}
 
   ${CODIGOPOSTALFAKE}   FakerLibrary.Postalcode
-  #Set Global Variable   ${ZipCode}    ${CODIGOPOSTALFAKE}
-
   Input Text    ${Postal_Code}    ${CODIGOPOSTALFAKE}
 
 Button Continue
@@ -92,3 +89,6 @@ Finish Purchase
 
 Back Home
   Click Element   xpath=//button[@name="back-to-products"]
+
+Add to Cart from Home Page
+  Click Element   xpath=//button[@id="add-to-cart-sauce-labs-backpack"]
